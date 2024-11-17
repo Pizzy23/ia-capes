@@ -2,7 +2,7 @@
 
 ---
 
-# Code Bridge: The one and only fidelity program you will ever need!  
+# Code Bridge
 
 > _TEAM Code Bridge: Hackathon Capes
 
