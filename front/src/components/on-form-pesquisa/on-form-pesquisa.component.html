@@ -1,0 +1,83 @@
+<div id="forms_wrapper">
+  <form (ngSubmit)="processarRequisicao()" id="form_pesquisa" method="get">
+    <div id="forms_sub_wrapper">
+      <input
+        id="forms_input_pesquisa"
+        name="pequisa"
+        [(ngModel)]="valorPequisado"
+        type="text"
+        [placeholder]="placeholder"
+        (focus)="limparPlaceholder()"
+        (blur)="restaurarPlaceholder()"
+      />
+      <button id="forms_botao_pesquisa" type="submit">
+        <img
+          src="../../assets/private/magnifying-glass-solid.svg"
+          alt="Ícone de pesquisa"
+        />
+      </button>
+    </div>
+  </form>
+  <div id="forms_results_wrapper">
+    <div id="forms_results_filtros">
+      <p style="justify-self: center;">Filtros</p>
+      <div *ngFor="let topico of topicos">
+        <label class="topic-badge ">
+          <input
+            type="checkbox"
+            [checked]="topicosSelecionados.has(topico)"
+            (change)="toggleFiltro(topico)"
+          />
+          {{ topico }}
+        </label>
+      </div>
+    </div>
+    <div id="forms_results_subwrapper">
+      <div id="forms_results_resultados">
+        <ngx-skeleton-loader *ngIf="carregando" count="1" [theme]="{ height: '100%' }" appearance="line"></ngx-skeleton-loader>
+  
+        <div *ngIf="!carregando && resultadosFiltrados().length > 0">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item" *ngFor="let resultado of resultadosFiltrados(); let i = index">
+              <h2 class="accordion-header" id="heading{{ i }}">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#collapse' + i"
+                  aria-expanded="true"
+                  [attr.aria-controls]="'collapse' + i">
+                  {{ resultado.title }}
+                </button>
+              </h2>
+              <div
+                [id]="'collapse' + i"
+                class="accordion-collapse collapse"
+                [class.show]="i === 0"
+                [attr.aria-labelledby]="'heading' + i"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <h5>{{ resultado.text }}</h5>
+                  <p><strong>Resumo:</strong> {{ resultado.abstract }}</p>
+                  <p><strong>Autores:</strong> {{ resultado.authors.join(', ') }}</p>
+                  <a href="#" target="_blank" class="btn btn-primary mt-2">Acessar Arquivo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <p *ngIf="!carregando && resultadosFiltrados().length === 0" style="justify-self: center;">
+          <b>Nenhum resultado encontrado :(</b>
+        </p>
+      </div>
+      <div id="forms_results_cadastrar" (click)="cadastrarArtigo()">
+        <p style="margin-bottom: 0;">Cadastre seu artigo científico!</p>
+        <button [routerLink]="['/cadastrar']" id="forms_resuls_cadastrar_button">
+            <img id="forms_resuls_cadastrar_button_figure" src="../../assets/private/plus-solid.svg" alt="Botão para adicionar artigo.">
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</div>

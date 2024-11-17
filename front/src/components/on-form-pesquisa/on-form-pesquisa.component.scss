@@ -1,0 +1,109 @@
+on-form-pesquisa{
+    width: 100%;
+}
+
+#form_pesquisa{
+    width: 100%;
+    justify-items: center;
+}
+
+#forms_wrapper{
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+}
+
+.topic-badge {
+    display: inline-block;
+    margin: 2px;
+    padding: 5px 10px;
+    background-color: #f16421;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+#forms_sub_wrapper{
+    font-family: "Raleway", sans-serif;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 80%;
+    border: none;
+    border-radius: 0px;
+    color: #212529;
+    box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.15);
+    height: 3.5em;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+#forms_input_pesquisa{
+    width: 100%;
+    padding-left: 4%;
+    font-size: 0.85em;
+    font-family: "Raleway", sans-serif;
+    outline: none;
+}
+
+#forms_botao_pesquisa {
+    width: 3em;
+    height: 100%;
+    background: none;
+    border: none;
+}
+
+#forms_results_wrapper{
+    width: 100%;
+    margin-top: 6rem;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 60rem;
+}
+
+#forms_results_subwrapper{
+    width: 70%;
+    height: 100%;
+}
+
+#forms_results_filtros{
+    width: 20%;
+    margin-right: 6%;
+    min-height: 32%;
+    height: fit-content;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 9px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#forms_results_resultados{
+    width: 100%;
+    height: 95%;
+}
+
+#forms_results_cadastrar{
+    justify-self: center;
+    margin-right: 15rem;
+    width: 33%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.15);
+    align-items: center;
+}
+
+#forms_resuls_cadastrar_button{
+    height: 100%;
+    width: 8%;
+    margin-left: 0.8rem;
+    background: #ffffff;
+}
+
+#forms_resuls_cadastrar_button_figure{
+    background: #ffffff;
+    max-height: 100%;
+}

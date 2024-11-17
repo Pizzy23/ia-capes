@@ -1,0 +1,33 @@
+*{
+    font-family: "Raleway", sans-serif;
+}
+
+on-cadastro{
+    width: 50rem;
+}
+
+input{
+    width: 100%;
+    outline: none;
+    padding-left: 1.5rem;
+}
+
+.section_pesquisa{
+    height: 63rem;
+}
+
+.forms_div_style{
+    margin: 1rem 0 1rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    border: none;
+    border-radius: 0px;
+    color: #212529;
+    box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.15);
+    height: 3.5em;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 0.85em;
+    font-family: "Raleway", sans-serif;
+}

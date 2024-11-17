@@ -1,0 +1,46 @@
+<div class="form-container">
+    <button [routerLink]="['/']" class="btn btn-secondary" style="margin-top: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    background-color: #ebebeb;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: black;">
+      <img style="max-height: 100%; width: 1.2rem;" src="../../assets/private/chevron-left-solid.svg" alt="Botão voltar">
+      <p style="margin-bottom: 0; margin-left: 1rem;">Voltar</p>
+    </button>
+
+    <form (ngSubmit)="enviarArtigo()">
+      <p>Cadastre seu artigo científico aqui</p>
+
+      <div class="forms_div_style">
+        <input id="title" placeholder="Título" [(ngModel)]="artigo.title" name="title" required />
+      </div>
+  
+      <div class="forms_div_style">
+        <input placeholder="Texto" id="text" [(ngModel)]="artigo.text" name="text">
+      </div>
+  
+      <div class="forms_div_style" *ngFor="let author of artigo.authors; let i = index">
+        <input placeholder="Autores" [(ngModel)]="artigo.authors[i]" name="authors{{i}}" />
+      </div>
+  
+      <div class="forms_div_style">
+        <input placeholder="ISSN" id="issn" [(ngModel)]="artigo.issn" name="issn" />
+      </div>
+  
+      <div class="forms_div_style" *ngFor="let topic of artigo.topics; let i = index">
+        <input placeholder="Tópicos" [(ngModel)]="artigo.topics[i]" name="topics{{i}}" />
+      </div>
+  
+      <div class="forms_div_style">
+        <input placeholder="Resumo" id="abstract" [(ngModel)]="artigo.abstract" name="abstract">
+      </div>
+  
+      <div class="forms_div_style" *ngFor="let reference of artigo.references; let i = index">
+        <input placeholder="Referências" [(ngModel)]="artigo.references[i]" name="references{{i}}" />
+      </div>
+  
+      <button class="btn btn-outline-secondary" style="font-weight: bold;" type="submit">Enviar</button>
+    </form>
+</div>
